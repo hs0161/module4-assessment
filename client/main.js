@@ -171,11 +171,11 @@ function displayGoals() {
     console.log(value);
 
     if(value === "inspire") {
-        alert("Some inspiration quote");
+        alert("Most of the important things in the world have been accomplished by people who have kept on trying when there seemed no hope at all.");
     } else if (value === "encourage"){
-        alert("Some encouragement quote")
+        alert("If you're not first, you're last.")
     } else if (value === "help"){
-        alert("help quotes")
+        alert("You didn't fail the test. You just found 100 ways to do it wrong.")
     } else {
         alert("You don't need a push? Just try one out!")
     }

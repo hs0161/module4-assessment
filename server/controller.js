@@ -1,8 +1,15 @@
+let compliments = [
+	{id: 1, text: "Gee, you're a smart cookie!"}, 
+	{id: 2, text: "Cool shirt!"}, 
+	{id: 3, text: "Your Javascript skills are stellar."}
+];
+
+let nextId = 4;
+
 module.exports = {
 
     getCompliment: (req, res) => {
-        const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
-      
+             
         // choose random compliment
         let randomIndex = Math.floor(Math.random() * compliments.length);
         let randomCompliment = compliments[randomIndex];
@@ -20,10 +27,10 @@ module.exports = {
     },
 
     postCompliment: (req, res) => {
-		const {compliment} = req.body;
+		const {compliments} = req.body;
 		compliments.push({
 			id: nextId++,
-			text: compliment
+			text: compliments
 		});
 
 		res.status(200).send(compliments[compliments.length - 1]);
@@ -31,10 +38,10 @@ module.exports = {
 
 	updateCompliment: (req, res) => {
 		const {id} = req.params;
-		const {compliment} = req.body;
+		const {compliments} = req.body;
 		
 		const compToUpdate = compliments.find((comp) => comp.id === +id);
-		compToUpdate.text = compliment;
+		compToUpdate.text = compliments;
 
 		res.status(200).send(compToUpdate);
 	},
@@ -52,5 +59,5 @@ module.exports = {
 	getComplimentList: (req, res) => {
 		res.status(200).send(compliments);
 	}
-    
+
 };

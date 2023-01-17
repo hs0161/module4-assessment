@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Back End Assessment</title>
+  </head>
+
+  <body class="container">
+    <div class="header">
+      <p id="complimentOutput"></p>
+      <h2 style="margin:5px">Need A New Compliment?</h2>
+        <br>
+        <button id="complimentButton" class="submitBtn">Get A Compliment</button>
+        <br><br>
+
+        <form>
+          <input type ="text" id="complimentInput" placeholder="Write your new message here."/>
+          <button id="complimentSubmit" class="submitBtn">Submit New Compliment</button>
+        </form>
+
+        <div id="complimentList">
+        </div>
+
+    </div>
+
+    <div class="header">
+      <h2 style="margin:5px">Fortune Cookie</h2>
+      <button id="fortuneButton" class="submitBtn">Click To Receive A Fortune</button>
+
+    </div>
+
+    
+    <div id="myDIV" class="header">
+      <h2 style="margin:5px">My Goals</h2>
+      <input type="text" id="myInput" placeholder="Type goals here">
+      <span onclick="newElement()" class="addBtn">Add Goals</span>
+    </div>
+
+    <ul id="goalsList">
+    </ul>
+				
+
+
+  <br><br>
+    <label for="goals">Need a little push to reach your goals?</label>
+      <select name="goals" id="goals" onchange="displayGoals()">
+        <option>Select</option>
+        <option value="inspire">Need Inspiration</option>
+        <option value="encourage">Need Encouragement</option>
+        <option value="help">Need Assistance</option>
+      </select>
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    
+  </body>
+
+</html>
